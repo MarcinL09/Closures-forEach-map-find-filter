@@ -64,3 +64,24 @@ function findUserWithFullName(users, fullName) {
 
 const kate = findUserWithFullName(usersArray, 'Kate Williams');
 console.log(kate.heightInCm); // 169
+
+// write the getNegativeNumbers function using the filter function
+
+// function getNegativeFunction(values) {
+    // const numbers = []
+//     for (let i = 0; i < values.length; ++i) {
+//         const number = values[i];
+//         if (number < 0) {
+//             numbers.push(values[i]);
+//         }
+//     }
+//     return numbers;
+// }
+
+const values = [1,-5,-3,12,-152];
+    const numbers = values.filter(function(value) {
+        return value < 0
+    })
+// }
+console.log(numbers);
+console.log(getNegativeFunction([1, -5, -3, 12, -152])); // [-5, -3, -152]
