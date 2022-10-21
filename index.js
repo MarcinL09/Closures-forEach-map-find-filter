@@ -99,24 +99,46 @@ const values = [1,-5,-3,12,-152];
 
 // write the getDeltaFunction
 // delta = b*b - 4*a*c
-function getDeltaFunction(a,b,c) {
-    return b ** 2 - 4 * a * c;
+// function getDeltaFunction(a,b,c) {
+//     return b ** 2 - 4 * a * c;
+// }
+//
+// // const delta = {
+// //         a: 1;
+// //         b: 2;
+// //         c: 3;
+// // }
+// const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
+//     getDelta.forEach(function (value) {
+//
+//     }
+//
+// console.log(getDelta()); // -8
+// getDelta({ b: 12 }); // 132
+// getDelta({ a: 4, b: 10 }); // 52
+// getDelta({ a: 4, b: 0 }); // -48
+// // The nested function returns NaN if any of the arguments are missing
+// console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
+// console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
+
+// Sum of positive using the forEach function
+
+function positiveSum(array) {
+//     let sum = 0;
+//     for (let i = 0; i < array.length; ++i) {
+//         if (array[i] > 0) {
+//             sum = sum + array[i]
+//         }
+//     }
+//     return sum;
+    let sum = 0;
+    array.forEach(function positiveSum(number) {
+        if (number > 0) {
+            sum = sum + number;
+        }
+    });
+    return sum;
 }
 
-// const delta = {
-//         a: 1;
-//         b: 2;
-//         c: 3;
-// }
-const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
-    getDelta.forEach(function (value) {
+console.log(positiveSum([1,-4,7,12]));
 
-    }
-
-console.log(getDelta()); // -8
-getDelta({ b: 12 }); // 132
-getDelta({ a: 4, b: 10 }); // 52
-getDelta({ a: 4, b: 0 }); // -48
-// The nested function returns NaN if any of the arguments are missing
-console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
-console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
