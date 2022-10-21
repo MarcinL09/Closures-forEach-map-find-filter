@@ -166,3 +166,13 @@ console.log(countSheeps([true,  true,  true,  false,
                          true,  true,  true,  true ,
                          false, false, true,  true]));
 
+// A Needle in the Haystack
+
+function findNeedle(haystack) {
+    const item = 'needle'
+    const index = haystack.findIndex(element => element === item);
+    return `found the ${item} at position ${index}`
+}
+
+
+console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
