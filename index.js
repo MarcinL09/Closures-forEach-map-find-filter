@@ -123,16 +123,16 @@ const values = [1,-5,-3,12,-152];
 
 // Sum of positive using the forEach function
 
-function positiveSum(array) {
+function positiveSum(arrayOfnumbers) {
 //     let sum = 0;
-//     for (let i = 0; i < array.length; ++i) {
-//         if (array[i] > 0) {
+//     for (let i = 0; i < arrayOfNumbers.length; ++i) {
+//         if (arrayOfNumbers[i] > 0) {
 //             sum = sum + array[i]
 //         }
 //     }
 //     return sum;
     let sum = 0;
-    array.forEach(function positiveSum(number) {
+    arrayOfnumbers.forEach(function positiveSum(number) {
         if (number > 0) {
             sum = sum + number;
         }
@@ -140,5 +140,29 @@ function positiveSum(array) {
     return sum;
 }
 
-console.log(positiveSum([1,-4,7,12]));
+console.log(positiveSum([1,-4,7,14]));
+
+function countSheeps(arrayOfSheep) {
+    const present = true;
+    let sheep = 0;
+    // for (let i = 0; i < arrayOfSheep.length; ++i) {
+    //     if (arrayOfSheep[i] === present) {
+    //         sheep++;
+    //     }
+    // }
+    arrayOfSheep.filter(function(value) {
+        if (value === present) {
+            sheep++;
+        }
+    });
+    return sheep;
+}
+
+
+console.log(countSheeps([true,  true,  true,  false,
+                         true,  true,  true,  true ,
+                         true,  false, true,  false,
+                         true,  false, false, true ,
+                         true,  true,  true,  true ,
+                         false, false, true,  true]));
 
