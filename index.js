@@ -83,5 +83,40 @@ const values = [1,-5,-3,12,-152];
         return value < 0
     })
 // }
-console.log(numbers);
-console.log(getNegativeFunction([1, -5, -3, 12, -152])); // [-5, -3, -152]
+// console.log(numbers);
+// console.log(getNegativeFunction([1, -5, -3, 12, -152])); // [-5, -3, -152]
+
+// write the getDivideByFunction
+// function getDivideByFunction(divisor) {
+//     return
+// }
+// const divideByFive = getDivideByFunction(5);
+// console.log(divideByFive(10)); // 2
+// console.log(divideByFive(50)); // 10
+// const divideByTwo = getDivideByFunction(2);
+// console.log(divideByTwo(8)); // 4
+// console.log(divideByTwo(50)); // 25
+
+// write the getDeltaFunction
+// delta = b*b - 4*a*c
+function getDeltaFunction(a,b,c) {
+    return b ** 2 - 4 * a * c;
+}
+
+// const delta = {
+//         a: 1;
+//         b: 2;
+//         c: 3;
+// }
+const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
+    getDelta.forEach(function (value) {
+
+    }
+
+console.log(getDelta()); // -8
+getDelta({ b: 12 }); // 132
+getDelta({ a: 4, b: 10 }); // 52
+getDelta({ a: 4, b: 0 }); // -48
+// The nested function returns NaN if any of the arguments are missing
+console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
+console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
