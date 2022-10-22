@@ -205,6 +205,17 @@ function getAverage(marks) {
     return Math.floor(sum/marks.length);
    }
 
-
 console.log(getAverage([3, 4, 5, 3.5]))
+
+// write isStringInArray using the find function
+
+function isStringInArray(arrays, name) {
+    return arrays.find(function(value) {
+       return value === name;
+    });
+   }
+
+
+console.log(isStringInArray(['Orange', 'Apple'], 'Apple')); // true
+console.log(isStringInArray(['Onion', 'Cabbage'], 'Potato')); // false
 
