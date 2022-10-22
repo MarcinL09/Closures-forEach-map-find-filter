@@ -176,3 +176,11 @@ function findNeedle(haystack) {
 
 
 console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
+
+// Given an array of integers, return a new array with each value doubled.
+function maps(value){
+    const doubledValue = value.map(element => element * 2);
+    return doubledValue;
+}
+
+console.log(maps([1, 2, 3]));
