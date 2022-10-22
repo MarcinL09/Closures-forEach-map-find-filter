@@ -188,12 +188,23 @@ console.log(maps([1, 2, 3]));
 // Each positive becomes negatives, and the negatives become positives.
 
 function invert(array) {
-    return array.map(element => element * (-1));
+    return array.map(element => element * -1);
 }
 
 console.log(invert([1,2,3,4,5]));
 console.log(invert([1,-2,3,-4,5]));
 console.log(invert([]));
 
+// Return the average of the given array rounded down to its nearest integer.
 
+function getAverage(marks) {
+    let sum = 0;
+    marks.forEach((mark) => {
+    sum = sum + mark;
+    });
+    return Math.floor(sum/marks.length);
+   }
+
+
+console.log(getAverage([3, 4, 5, 3.5]))
 
