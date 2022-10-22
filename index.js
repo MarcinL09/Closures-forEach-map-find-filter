@@ -87,15 +87,18 @@ const values = [1,-5,-3,12,-152];
 // console.log(getNegativeFunction([1, -5, -3, 12, -152])); // [-5, -3, -152]
 
 // write the getDivideByFunction
-// function getDivideByFunction(divisor) {
-//     return
-// }
-// const divideByFive = getDivideByFunction(5);
-// console.log(divideByFive(10)); // 2
-// console.log(divideByFive(50)); // 10
-// const divideByTwo = getDivideByFunction(2);
-// console.log(divideByTwo(8)); // 4
-// console.log(divideByTwo(50)); // 25
+function getDivideByFunction(divisor) {
+    function divideBy(dividend) {
+    return dividend / divisor;
+    }
+    return divideBy;
+}
+const divideByFive = getDivideByFunction(5);
+console.log(divideByFive(10)); // 2
+console.log(divideByFive(50)); // 10
+const divideByTwo = getDivideByFunction(2);
+console.log(divideByTwo(8)); // 4
+console.log(divideByTwo(50)); // 25
 
 // write the getDeltaFunction
 // delta = b*b - 4*a*c
@@ -221,19 +224,19 @@ console.log(isStringInArray(['Onion', 'Cabbage'], 'Potato')); // false
 
 // write the forEach function from scratch using a for loop
 
-const vegetables = ['Carrot', 'Cabbage', 'Onion'];
-function printVegetable(vegetable, index) {
-    console.log(vegetable index);
-}
-forEach(vegetables, printVegetable);
-// Carrot 0
-// Cabbage 1
-// Onion 2
-const fruits = ['Apple', 'Orange', 'Watermelon'];
-forEach(fruits, function(fruit, index) {
-        console.log(fruit, index);
-    }
-)
-// Apple 0
-// Orange 1
-// Watermelon 2
+// const vegetables = ['Carrot', 'Cabbage', 'Onion'];
+// function printVegetable(vegetable, index) {
+//     console.log(vegetable index);
+// }
+// forEach(vegetables, printVegetable);
+// // Carrot 0
+// // Cabbage 1
+// // Onion 2
+// const fruits = ['Apple', 'Orange', 'Watermelon'];
+// forEach(fruits, function(fruit, index) {
+//         console.log(fruit, index);
+//     }
+// )
+// // Apple 0
+// // Orange 1
+// // Watermelon 2
