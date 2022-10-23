@@ -38,13 +38,6 @@ const usersArray = [
 ]
 
 function findUserWithFullName(users, fullName) {
-//     for (let i = 0; i < users.length; ++i) {
-//         const user = users[i];
-//         if ((`${user.firstName} ${user.lastName}`) === fullName) {
-//             return user;
-//         }
-//     }
-// }
     return users.find(function(user) {
         return `${user.firstName} ${user.lastName}` === fullName;
 })
@@ -55,24 +48,13 @@ console.log(kate.heightInCm); // 169
 
 // write the getNegativeNumbers function using the filter function
 
-// function getNegativeFunction(values) {
-    // const numbers = []
-//     for (let i = 0; i < values.length; ++i) {
-//         const number = values[i];
-//         if (number < 0) {
-//             numbers.push(values[i]);
-//         }
-//     }
-//     return numbers;
-// }
+function getNegativeFunction(values) {
+    return values.filter(function(value) {
+        return value < 0;
+    });
+}
 
-const values = [1,-5,-3,12,-152];
-    const numbers = values.filter(function(value) {
-        return value < 0
-    })
-// }
-// console.log(numbers);
-// console.log(getNegativeFunction([1, -5, -3, 12, -152])); // [-5, -3, -152]
+console.log(getNegativeFunction([1, -5, -3, 12, -152])); // [-5, -3, -152]
 
 // write the getDivideByFunction
 function getDivideByFunction(divisor) {
