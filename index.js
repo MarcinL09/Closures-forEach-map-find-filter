@@ -6,7 +6,7 @@ function getSmallestNumber(arrayOfNumbers) {
     if (number < lowestNumber) {
         lowestNumber = number;
     }
-  });
+    });
     return lowestNumber;
 }
 
@@ -14,7 +14,6 @@ console.log(getSmallestNumber([2, -5, 10, 1, 4])); // -5
 console.log(getSmallestNumber([200, 25, 4, 123, 87])); // 4
 
 // write the getSquaredNumbers function using map
-const arrayOfNumbers = [1,2,3,4,5]
 
 function getSquaredNumbers(arrayOfNumbers) {
     return arrayOfNumbers.map(number => number ** 2);
@@ -59,7 +58,7 @@ console.log(getNegativeFunction([1, -5, -3, 12, -152])); // [-5, -3, -152]
 // write the getDivideByFunction
 function getDivideByFunction(divisor) {
     function divideBy(dividend) {
-    return dividend / divisor;
+        return dividend / divisor;
     }
     return divideBy;
 }
@@ -72,36 +71,29 @@ console.log(divideByTwo(50)); // 25
 
 // write the getDeltaFunction
 // delta = b*b - 4 * a * c
-function getDeltaFunction(value) {
-        return value.forEach(function (number) {
-        return number;
-    });
-        function getDelta() {
-        return number.b ** 2 - 4 * number.a * number.c;
-    }
-}
-console.log(getDeltaFunction({a: 1, b: 2, c: 3}))
-const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
-
-
-console.log(getDelta()); // -8
-getDelta({ b: 12 }); // 132
-getDelta({ a: 4, b: 10 }); // 52
-getDelta({ a: 4, b: 0 }); // -48
-// The nested function returns NaN if any of the arguments are missing
-console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
-console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
+// function getDeltaFunction(value) {
+//         return value.forEach(function (number) {
+//         return number;
+//     });
+//         function getDelta() {
+//         return number.b ** 2 - 4 * number.a * number.c;
+//     }
+// }
+// console.log(getDeltaFunction({a: 1, b: 2, c: 3}))
+// const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
+//
+//
+// console.log(getDelta()); // -8
+// getDelta({ b: 12 }); // 132
+// getDelta({ a: 4, b: 10 }); // 52
+// getDelta({ a: 4, b: 0 }); // -48
+// // The nested function returns NaN if any of the arguments are missing
+// console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
+// console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
 
 // Sum of positive using the forEach function
 
 function positiveSum(arrayOfnumbers) {
-//     let sum = 0;
-//     for (let i = 0; i < arrayOfNumbers.length; ++i) {
-//         if (arrayOfNumbers[i] > 0) {
-//             sum = sum + array[i]
-//         }
-//     }
-//     return sum;
     let sum = 0;
     arrayOfnumbers.forEach(function positiveSum(number) {
         if (number > 0) {
@@ -118,11 +110,6 @@ console.log(positiveSum([1,-4,7,14]));
 function countSheeps(arrayOfSheep) {
     const present = true;
     let sheep = 0;
-    // for (let i = 0; i < arrayOfSheep.length; ++i) {
-    //     if (arrayOfSheep[i] === present) {
-    //         sheep++;
-    //     }
-    // }
     arrayOfSheep.filter(function(value) {
         if (value === present) {
             sheep++;
@@ -130,7 +117,6 @@ function countSheeps(arrayOfSheep) {
     });
     return sheep;
 }
-
 
 console.log(countSheeps([true,  true,  true,  false,
                          true,  true,  true,  true ,
@@ -172,8 +158,8 @@ console.log(invert([]));
 
 function getAverage(marks) {
     let sum = 0;
-    marks.forEach((mark) => {
-    sum = sum + mark;
+    marks.forEach(function(mark) {
+        sum = sum + mark;
     });
     return Math.floor(sum/marks.length);
    }
@@ -183,11 +169,12 @@ console.log(getAverage([3, 4, 5, 3.5]))
 // write isStringInArray using the find function
 
 function isStringInArray(arrays, name) {
-    return arrays.find(function(value) {
+    const element = arrays.find(function(value) {
        return value === name;
     });
+    return element !== undefined;
 }
-
+            // value === 'Apple'
 
 console.log(isStringInArray(['Orange', 'Apple'], 'Apple')); // true
 console.log(isStringInArray(['Onion', 'Cabbage'], 'Potato')); // false
