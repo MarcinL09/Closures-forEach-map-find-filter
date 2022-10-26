@@ -174,7 +174,6 @@ function isStringInArray(arrays, name) {
     });
     return element !== undefined;
 }
-            // value === 'Apple'
 
 console.log(isStringInArray(['Orange', 'Apple'], 'Apple')); // true
 console.log(isStringInArray(['Onion', 'Cabbage'], 'Potato')); // false
@@ -187,6 +186,7 @@ function printVegetable(vegetable, index) {
         const vegetable = vegetables[i];
         const index = i;
     }
+    console.log(vegetable, index)
 }
 vegetables.forEach(printVegetable);
 // Carrot 0
@@ -194,9 +194,7 @@ vegetables.forEach(printVegetable);
 // Onion 2
 
 const fruits = ['Apple', 'Orange', 'Watermelon'];
-forEach(
-    fruits,
-    function(fruit, index) {
+fruits.forEach(function(fruit, index) {
         console.log(fruit, index);
     }
 )
