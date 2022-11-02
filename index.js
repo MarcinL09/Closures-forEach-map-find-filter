@@ -71,14 +71,15 @@ console.log(divideByTwo(50)); // 25
 
 // write the getDeltaFunction
 // delta = b*b - 4 * a * c
-// function getDeltaFunction(value) {
-//         return value.forEach(function (number) {
-//         return number;
-//     });
-//         function getDelta() {
-//         return number.b ** 2 - 4 * number.a * number.c;
+// function getDeltaFunction(a, c) {
+//     function getDelta(b) {
+//         return b.forEach(function(number)) {
+//             number.b ** 2 - 4 * number.a * number.c;
+//         }
 //     }
+//     return getDelta();
 // }
+//
 // console.log(getDeltaFunction({a: 1, b: 2, c: 3}))
 // const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
 //
@@ -93,9 +94,9 @@ console.log(divideByTwo(50)); // 25
 
 // Sum of positive using the forEach function
 
-function positiveSum(arrayOfnumbers) {
+function positiveSum(arrayOfNumbers) {
     let sum = 0;
-    arrayOfnumbers.forEach(function positiveSum(number) {
+    arrayOfNumbers.forEach(function positiveSum(number) {
         if (number > 0) {
             sum = sum + number;
         }
@@ -168,8 +169,8 @@ console.log(getAverage([3, 4, 5, 3.5]))
 
 // write isStringInArray using the find function
 
-function isStringInArray(arrays, name) {
-    const element = arrays.find(function(value) {
+function isStringInArray(array, name) {
+    const element = array.find(function(value) {
        return value === name;
     });
     return element !== undefined;
@@ -194,10 +195,37 @@ vegetables.forEach(printVegetable);
 // Onion 2
 
 const fruits = ['Apple', 'Orange', 'Watermelon'];
-fruits.forEach(function(fruit, index) {
-        console.log(fruit, index);
+function forEach(array, callback) {
+    for (let i = 0; i < array.length; ++i) {
+        const element = array[i];
+        callback(element, i);
     }
-)
+}
+
+function printFruit(fruit, index) {
+    console.log(fruit, index);
+}
+
+forEach(fruits, printFruit);
+
 // Apple 0
 // Orange 1
-// Watermelon 2
+// Watermelon
+//            fruits, isFruit
+function find(array, callback) {
+    for (let i = 0; i < array.length; ++i) {
+        const element = array[i];
+        if (element === 'Orange') {
+        return callback(element);
+        }
+    }
+}
+
+function isFruit(fruit) {
+    console.log(fruit);
+}
+
+find(fruits, isFruit);
+
+
+
