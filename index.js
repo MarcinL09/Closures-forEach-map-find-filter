@@ -231,8 +231,8 @@ find(fruits, isFruit);
 
 // create the executeAfterFiveSeconds function that calls the provided function after five seconds
 
-function executeAfterFiveSeconds(functionRef) {
-    setTimeout(functionRef, 5000);
+function executeAfterFiveSeconds(callback) {
+    setTimeout(callback, 5000);
 }
 
 function sayHello() {
@@ -240,3 +240,22 @@ function sayHello() {
 }
 
 executeAfterFiveSeconds(sayHello);
+
+// create the getRandomIntegerGenerator function. It should return a function that returns a
+// random integer between two provided numbers.
+
+
+// const getRandomDigit = function(digit) {
+//     return Math.random() * (maximumDigit - minimumDigit) + minimumDigit;
+// }
+
+function getRandomIntegerGenerator(minimumDigit, maximumDigit) {
+    function getRandomDigit(minimumDigit, maximumDigit) {
+        return Math.random() * (maximumDigit - minimumDigit) + minimumDigit;
+    }
+    return getRandomDigit(minimumDigit, maximumDigit);
+}
+
+const getRandomDigit = getRandomIntegerGenerator(0, 9);
+console.log(getRandomDigit); // random number between 0 and 9
+console.log(getRandomIntegerGenerator(-10, 10)); // random number between -10 and 10
