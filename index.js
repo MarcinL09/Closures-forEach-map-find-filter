@@ -244,11 +244,6 @@ executeAfterFiveSeconds(sayHello);
 // create the getRandomIntegerGenerator function. It should return a function that returns a
 // random integer between two provided numbers.
 
-
-// const getRandomDigit = function(digit) {
-//     return Math.random() * (maximumDigit - minimumDigit) + minimumDigit;
-// }
-
 function getRandomIntegerGenerator(minimumDigit, maximumDigit) {
     function getRandomDigit(minimumDigit, maximumDigit) {
         return Math.random() * (maximumDigit - minimumDigit) + minimumDigit;
@@ -256,6 +251,64 @@ function getRandomIntegerGenerator(minimumDigit, maximumDigit) {
     return getRandomDigit(minimumDigit, maximumDigit);
 }
 
-const getRandomDigit = getRandomIntegerGenerator(0, 9);
-console.log(getRandomDigit); // random number between 0 and 9
+const getRandomDigits = getRandomIntegerGenerator(0, 9);
+console.log(getRandomDigits); // random number between 0 and 9
 console.log(getRandomIntegerGenerator(-10, 10)); // random number between -10 and 10
+/*
+create the findObjectProperty that returns the name of a property from an object
+it works similarly to the find built into JavaScript, but works with an object instead of an array
+if there is no matching property name, return undefined
+*/
+
+// const redApple = {
+//     color: 'red',
+//     weightInGrams: 150
+// }
+// console.log(Object.keys(redApple));
+//
+// function findObjectProperty(object, callback) {
+//     const redApple = Object.keys(object);
+//     for (let i = 0; i < redApple.length; ++i);
+//     const redAppleValue = redApple[i];
+//     if (redApple.redAppleValue === 'red') {
+//         return redAppleValue;
+//     }
+// }
+//
+// function isPropertyName(propertyValue) {
+//     return ;
+// }
+//
+// const propertyName = findObjectProperty(redApple, isPropertyName);
+//
+// console.log(propertyName); // color
+//
+// const john = {
+//     name: 'John',
+//     bestFriend: {
+//         name: 'Adam'
+//     }
+// }
+//
+// const adamPropertyName = findObjectProperty(john, function(propertyValue) {
+//     return propertyValue === 'Adam';
+// })
+// console.log(adamPropertyName); // bestFriend
+
+// create the getRandomCharacterGenerator function. It should return a function that returns a
+// random character from the provided string.
+
+function getRandomCharacterGenerator(string) {
+    function getRandom(string) {
+        const array = string.split('');
+        const random = array[Math.floor(Math.random() * array.length)];
+        return random;
+    }
+}
+
+
+
+const getRandomDigit = getRandomCharacterGenerator('0123456789');
+getRandomDigit(); // returns a random string that contains a single digit
+const getRandomABC = getRandomCharacterGenerator('abcABC');
+getRandomABC(); // returns a random string that is a, A, b, B, c, or C
