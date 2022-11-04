@@ -299,16 +299,15 @@ if there is no matching property name, return undefined
 // random character from the provided string.
 
 function getRandomCharacterGenerator(string) {
-    function getRandom(string) {
+    function getRandomDigit(string) {
         const array = string.split('');
-        const random = array[Math.floor(Math.random() * array.length)];
-        return random;
+        return array[Math.floor(Math.random() * array.length)];
     }
+    return getRandomDigit(string)
 }
 
-
-
 const getRandomDigit = getRandomCharacterGenerator('0123456789');
-getRandomDigit(); // returns a random string that contains a single digit
+console.log(getRandomDigit); // returns a random string that contains a single digit
+
 const getRandomABC = getRandomCharacterGenerator('abcABC');
-getRandomABC(); // returns a random string that is a, A, b, B, c, or C
+console.log(getRandomABC) // returns a random string that is a, A, b, B, c, or C
