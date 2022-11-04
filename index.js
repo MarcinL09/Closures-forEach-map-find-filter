@@ -303,7 +303,7 @@ function getRandomCharacterGenerator(string) {
         const array = string.split('');
         return array[Math.floor(Math.random() * array.length)];
     }
-    return getRandomDigit(string)
+    return getRandomDigit(string);
 }
 
 const getRandomDigit = getRandomCharacterGenerator('0123456789');
@@ -311,3 +311,24 @@ console.log(getRandomDigit); // returns a random string that contains a single d
 
 const getRandomABC = getRandomCharacterGenerator('abcABC');
 console.log(getRandomABC) // returns a random string that is a, A, b, B, c, or C
+
+// create the getPrefixedStringGenerator function. It should return a function that returns a string
+// with the added prefix.
+
+function getPrefixedStringGenerator(prefix) {
+    function getPrefix(name) {
+        const nameWithPrefix = prefix + name;
+        return nameWithPrefix;
+    }
+    return getPrefix;
+}
+const prefixStringWithMister = getPrefixedStringGenerator('Mr.');
+console.log(getPrefixedStringGenerator('Mr.')(' John')); // Mr. John
+console.log(prefixStringWithMister(' Adam')); // Mr. Adam
+const prefixStringWithMiss = getPrefixedStringGenerator('Ms.');
+console.log(prefixStringWithMiss(' Kate')); // Ms. Kate
+console.log(prefixStringWithMiss(' Julie')); // Ms. Julie
+const prefisStringWithNegative = getPrefixedStringGenerator('un');
+console.log(prefisStringWithNegative('happy')); // unhappy
+console.log(prefisStringWithNegative('productive')); // unproductive
+console.log(prefisStringWithNegative('fair')); // unfair
