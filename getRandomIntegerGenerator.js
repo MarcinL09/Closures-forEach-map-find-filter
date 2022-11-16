@@ -1,8 +1,7 @@
 function getRandomIntegerGenerator(minimumDigit, maximumDigit) {
-    function getRandomDigit(minimumDigit, maximumDigit) {
+    return function getRandomDigit(minimumDigit, maximumDigit) {
         return Math.random() * (maximumDigit - minimumDigit) + minimumDigit;
     }
-    return getRandomDigit(minimumDigit, maximumDigit);
 }
 
 // const getRandomDigits = getRandomIntegerGenerator(0, 9);

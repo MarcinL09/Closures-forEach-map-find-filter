@@ -296,18 +296,16 @@ console.log(propertyName); // color
 // random character from the provided string.
 
 function getRandomCharacterGenerator(string) {
-    function getRandomDigit(string) {
+    return function () {
         const array = string.split('');
         return array[Math.floor(Math.random() * array.length)];
     }
-    return getRandomDigit(string);
 }
 
 const getRandomDigit = getRandomCharacterGenerator('0123456789');
-console.log(getRandomDigit); // returns a random string that contains a single digit
-
+console.log(getRandomDigit()); // returns a random string that contains a single digit
 const getRandomABC = getRandomCharacterGenerator('abcABC');
-console.log(getRandomABC) // returns a random string that is a, A, b, B, c, or C
+console.log(getRandomABC()); // returns a random string that is a, A, b, B, c, or C
 
 // create the getPrefixedStringGenerator function. It should return a function that returns a string
 // with the added prefix.
