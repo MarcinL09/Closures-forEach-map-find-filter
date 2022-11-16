@@ -39,7 +39,7 @@ const usersArray = [
 function findUserWithFullName(users, fullName) {
     return users.find(function(user) {
         return `${user.firstName} ${user.lastName}` === fullName;
-})
+    });
 }
 
 const kate = findUserWithFullName(usersArray, 'Kate Williams');
@@ -71,26 +71,25 @@ console.log(divideByTwo(50)); // 25
 
 // write the getDeltaFunction
 // delta = b*b - 4 * a * c
-// function getDeltaFunction(a, c) {
-//     function getDelta(b) {
-//         return b.forEach(function(number)) {
-//             number.b ** 2 - 4 * number.a * number.c;
-//         }
-//     }
-//     return getDelta();
-// }
-//
-// console.log(getDeltaFunction({a: 1, b: 2, c: 3}))
-// const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
-//
-//
-// console.log(getDelta()); // -8
-// getDelta({ b: 12 }); // 132
-// getDelta({ a: 4, b: 10 }); // 52
-// getDelta({ a: 4, b: 0 }); // -48
-// // The nested function returns NaN if any of the arguments are missing
-// console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
-// console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
+function getDeltaFunction(firstNumbers) {
+    return function(secondNumbers = {}) {
+        const a = secondNumbers.a ?? firstNumbers.a;
+        const b = secondNumbers.b ?? firstNumbers.b;
+        const c = secondNumbers.c ?? firstNumbers.c;
+        return b * b - 4 * a * c;
+    }
+}
+
+const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
+//                             getDelta({b: 12});
+console.log(getDelta()); // -8
+
+console.log(getDelta({b: 12})); // 132
+console.log(getDelta({ a: 4, b: 10 })); // 52
+console.log(getDelta({ a: 4, b: 0 })); // -48
+// The nested function returns NaN if any of the arguments are missing
+console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
+console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
 
 // Sum of positive using the forEach function
 
@@ -260,40 +259,38 @@ it works similarly to the find built into JavaScript, but works with an object i
 if there is no matching property name, return undefined
 */
 
-// const redApple = {
-//     color: 'red',
-//     weightInGrams: 150
-// }
-// console.log(Object.keys(redApple));
-//
-// function findObjectProperty(object, callback) {
-//     const redApple = Object.keys(object);
-//     for (let i = 0; i < redApple.length; ++i);
-//     const redAppleValue = redApple[i];
-//     if (redApple.redAppleValue === 'red') {
-//         return redAppleValue;
-//     }
-// }
-//
-// function isPropertyName(propertyValue) {
-//     return ;
-// }
-//
-// const propertyName = findObjectProperty(redApple, isPropertyName);
-//
-// console.log(propertyName); // color
-//
+const redApple = {
+    color: 'red',
+    weightInGrams: 150
+}
+//                         redApple, function(propertyValue)
+function findObjectProperty(object, callback) {
+    const properties = Object.keys(object);
+        for (let i = 0; i < properties.length; ++i) {
+            const property = properties[i];
+            const propertyValue = object[property];
+    }
+    return callback;
+}
+// console.log(findObjectProperty(redApple));
+const propertyName = findObjectProperty(redApple, function(propertyValue) {
+    return propertyValue === 'red';
+})
+console.log(propertyName); // color
 // const john = {
 //     name: 'John',
 //     bestFriend: {
 //         name: 'Adam'
 //     }
 // }
-//
+// console.log(john.bestFriend.name)
+// const johnArray = Object.keys(john);
+// console.log(johnArray)
 // const adamPropertyName = findObjectProperty(john, function(propertyValue) {
-//     return propertyValue === 'Adam';
+//     return propertyValue && propertyValue.name= 'Adam';
 // })
 // console.log(adamPropertyName); // bestFriend
+
 
 // create the getRandomCharacterGenerator function. It should return a function that returns a
 // random character from the provided string.
@@ -316,9 +313,9 @@ console.log(getRandomABC) // returns a random string that is a, A, b, B, c, or C
 // with the added prefix.
 
 function getPrefixedStringGenerator(prefix) {
-    function getPrefix(name) {
-        const nameWithPrefix = prefix + name;
-        return nameWithPrefix;
+    function getPrefix(string) {
+        const stringWithPrefix = prefix + string;
+        return stringWithPrefix;
     }
     return getPrefix;
 }
